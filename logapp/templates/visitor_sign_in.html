@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+<head>
+    <title>Visitor Sign-In</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <section class="header">
+        <h1>OJO ENGINEERING LIMITED</h1>
+        <h3>Amazon Site, Maitama, Abuja</h3>
+    </section>
+    <section class="body">
+        <h2>Visitor Sign-In</h2>
+        <form class="fill" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="site" type="submit">Sign In</button>
+        </form>
+        <a href="{% url 'logapp:visitor_list' %}">
+            <button id="click" class="site">Visitors</button>
+        </a>
+    </section>
+</body>
+</html>
